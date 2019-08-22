@@ -35,4 +35,12 @@ export default class PizzaController {
     _pizzaService.addTopping(newTopping, pizzaIndex)
     _draw()
   }
+  deletePizza(index) {
+    _pizzaService.deletePizza(index)
+    _draw()
+  }
+  deleteTopping(pizzaIndex, toppingIndex) {
+    _pizzaService.deleteTopping(pizzaIndex, toppingIndex)
+    _draw()
+  }
 }

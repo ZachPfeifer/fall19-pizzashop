@@ -11,6 +11,12 @@ let _state = {
 }
 
 export default class PizzaService {
+  deleteTopping(pizzaIndex, toppingIndex) {
+    _state.pizzas[pizzaIndex].toppings.splice(toppingIndex, 1)
+  }
+  deletePizza(index) {
+    _state.pizzas.splice(index, 1)
+  }
   addTopping(newTopping, pizzaIndex) {
     _state.pizzas[pizzaIndex].toppings.push(newTopping)
   }

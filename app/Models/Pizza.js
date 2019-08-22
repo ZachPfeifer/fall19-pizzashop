@@ -15,14 +15,15 @@ export default class Pizza {
   }
 
   getTemplate(index) {
-    return `
+    let template =
+      `
         <div class="col-4">
             <h1>${this.name}</h1>
             <h3>${this.size}</h3>
             <h3>${this.crust}</h3>
-            <ul>
-                <li>${this.toppings}</li>
-            </ul>
+            <ul>`
+    template += this.drawToppings(index)
+    template += `    </ul>
             <form onsubmit="app.controllers.pizzaController.addTopping(event, ${index})"> 
               <div class="form-group">
                 <label for="topping">topping</label>
@@ -31,8 +32,16 @@ export default class Pizza {
                 <button type="submit">+</button>
               </form>
               <h3>${this.price}</h3>
-              <button type ="button"></button>
+              <button type ="button" onclick="app.controllers.pizzaController.deletePizza(${index})">X</button>
         </div>
     `
+    return template
+  }
+  drawToppings(pizzaIndex) {
+    let toppingTemplate = ""
+    this.toppings.forEach((t, toppingIndex) => {
+      toppingTemplate += `<li>${t}<span onclick="app.controllers.pizzaController.deleteTopping(${pizzaIndex}, ${toppingIndex})">X</span></li>`
+    });
+    return toppingTemplate
   }
 }
