@@ -20,7 +20,13 @@ export default class PizzaController {
     _draw()
   }
 
-  addPizza() {
-
+  addPizza(event) {
+    event.preventDefault()
+    let form = event.target
+    let newPizza = {
+      name: form.name.value
+    }
+    _pizzaService.addPizza(newPizza)
+    _draw()
   }
 }

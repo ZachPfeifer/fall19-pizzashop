@@ -13,6 +13,10 @@
 <body>
     <div class="container-fluid">
         <form onsubmit="app.controllers.pizzaController.addPizza(event)">
+            <div class="form-group">
+                <label for="name">name</label>
+                <input type="text" class="form-control" name="name" placeholder="pizza name" required>
+            </div>
 
         </form>
         <div id="pizza" class="row">
