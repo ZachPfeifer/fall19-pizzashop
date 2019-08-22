@@ -7,8 +7,7 @@ function _draw() {
   let template = ``
   let pizzas = _pizzaService.Pizza
   pizzas.forEach((pizza, index) => {
-    template += pizza.Template
-
+    template += pizza.getTemplate(index)
   })
   document.querySelector('#pizza').innerHTML = template
 }
@@ -27,6 +26,13 @@ export default class PizzaController {
       name: form.name.value
     }
     _pizzaService.addPizza(newPizza)
+    _draw()
+  }
+  addTopping(event, pizzaIndex) {
+    event.preventDefault()
+    let form = event.target
+    let newTopping = form.topping.value
+    _pizzaService.addTopping(newTopping)
     _draw()
   }
 }

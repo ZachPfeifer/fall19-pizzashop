@@ -13,7 +13,7 @@ export default class Pizza {
 
   }
 
-  get Template() {
+  getTemplate(index) {
     return `
         <div class="col-4">
             <h1>${this.name}</h1>
@@ -22,7 +22,7 @@ export default class Pizza {
             <ul>
                 <li>${this.toppings}</li>
             </ul>
-            <form> 
+            <form onsubmit="app.controllers.pizzaController.addTopping(event, ${index})"> 
               <div class="form-group">
                 <label for="topping">topping</label>
                 <input type="text" class="form-control" name="topping" placeholder="pizza topping" required>

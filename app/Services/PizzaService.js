@@ -11,6 +11,9 @@ let _state = {
 }
 
 export default class PizzaService {
+  addTopping(newTopping) {
+    _state.pizzas.
+  }
   addPizza(newPizza) {
     _state.pizzas.push(new Pizza(newPizza))
     console.log(_state.pizzas)
