@@ -12,7 +12,8 @@ let _state = {
 
 export default class PizzaService {
   addPizza(newPizza) {
-    throw new Error("Method not implemented.");
+    _state.pizzas.push(new Pizza(newPizza))
+    console.log(_state.pizzas)
   }
   constructor() {
     console.log("Howdy from pizza service........")

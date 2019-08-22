@@ -22,6 +22,12 @@ export default class Pizza {
             <ul>
                 <li>${this.toppings}</li>
             </ul>
+            <form> 
+              <div class="form-group">
+                <label for="topping">topping</label>
+                <input type="text" class="form-control" name="topping" placeholder="pizza topping" required>
+              </div>
+            </form>
             <h3>${this.price}</h3>
         </div>
     `
