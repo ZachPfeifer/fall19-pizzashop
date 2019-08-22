@@ -32,7 +32,7 @@ export default class PizzaController {
     event.preventDefault()
     let form = event.target
     let newTopping = form.topping.value
-    _pizzaService.addTopping(newTopping)
+    _pizzaService.addTopping(newTopping, pizzaIndex)
     _draw()
   }
 }

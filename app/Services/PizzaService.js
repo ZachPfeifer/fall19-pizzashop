@@ -11,8 +11,8 @@ let _state = {
 }
 
 export default class PizzaService {
-  addTopping(newTopping) {
-    _state.pizzas.
+  addTopping(newTopping, pizzaIndex) {
+    _state.pizzas[pizzaIndex].toppings.push(newTopping)
   }
   addPizza(newPizza) {
     _state.pizzas.push(new Pizza(newPizza))

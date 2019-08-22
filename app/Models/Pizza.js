@@ -4,12 +4,13 @@
 
 export default class Pizza {
   constructor(data) {
+
     console.log("Salutations from pizza. Ah a talking pizza!!!")
     this.name = data.name
-    this.size = data.size
-    this.toppings = data.toppings
-    this.crust = data.crust
-    this.price = data.price
+    this.size = data.size || null
+    this.toppings = data.toppings || []
+    this.crust = data.crust || null
+    this.price = data.price || null
 
   }
 
@@ -26,9 +27,11 @@ export default class Pizza {
               <div class="form-group">
                 <label for="topping">topping</label>
                 <input type="text" class="form-control" name="topping" placeholder="pizza topping" required>
-              </div>
-            </form>
-            <h3>${this.price}</h3>
+                </div>
+                <button type="submit">+</button>
+              </form>
+              <h3>${this.price}</h3>
+              <button type ="button"></button>
         </div>
     `
   }
