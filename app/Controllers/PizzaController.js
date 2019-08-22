@@ -4,6 +4,12 @@ let _pizzaService = new PizzaService()
 
 
 function _draw() {
+  let template = ``
+  let pizzas = _pizzaService.Pizza
+  pizzas.forEach((pizza, index) => {
+    template += pizza.Template
+
+  })
   document.querySelector('#pizza').innerHTML = template
 }
 
@@ -11,5 +17,10 @@ function _draw() {
 export default class PizzaController {
   constructor() {
     console.log("Hi from pizza controller!!111!11!!")
+    _draw()
+  }
+
+  addPizza() {
+
   }
 }
